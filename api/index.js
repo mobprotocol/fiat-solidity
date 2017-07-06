@@ -18,3 +18,7 @@ app.get('/client_token', (req, res) => {
     res.send(res2.clientToken)
   })
 })
+
+app.post('/checkout', (req, res) => {
+  const nonceFromClient = req.body.payment_method_nonce
+})
