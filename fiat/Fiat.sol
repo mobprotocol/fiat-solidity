@@ -1,8 +1,10 @@
 pragma solidity ^0.4.6;
 
-contract Fiat {
+contract Asset {
     event Transfer(address indexed from, address indexed to, uint value);
     event Approval(address indexed owner, address indexed spender, uint value);
+    event Deposit(address indexed owner, uint value);
+    event Withdraw(address indexed owner, uint value);
 
     mapping( address => uint ) balances;
     mapping( address => mapping( address => uint ) ) approvals;
@@ -40,4 +42,6 @@ contract Fiat {
     function balanceOf(address who) constant returns (uint) {
         return balances[who];
     }
+
+
 }
